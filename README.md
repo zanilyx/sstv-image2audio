@@ -1,71 +1,102 @@
-# SSTV Encoder Pro
+# SSTV Encoder Pro v3
 
-A modern, user-friendly GUI tool to encode images into SSTV (Slow Scan Television) audio in various modes (Robot36, Scottie 1, Martin M1, Martin M2) with real-time playback and image enhancement.
+A modern, robust GUI tool to encode images into SSTV (Robot36, Scottie 1, Martin M1, Martin M2) audio with real-time playback, image enhancement, drag-and-drop, watermarking, and more. **v3 is the recommended version.**
 
-## Features
-- Encode images to SSTV audio (WAV) in Robot36, Scottie 1, Martin M1, and Martin M2 formats
-- Image enhancement: auto-contrast, color boost, sharpening
-- Selectable sample rate (44100, 48000, 22050 Hz)
-- Real-time audio playback with progress bar
-- User-friendly GUI (Tkinter)
-- Cross-platform (Windows, Linux, macOS)
+---
 
-## Installation
+## Features (v3)
 
-1. **Clone the repository:**
-   ```sh
-   git clone https://github.com/zanilyx/sstv-encoder-pro.git
-   cd sstv-encoder-pro
-   ```
-2. **Install dependencies:**
-   ```sh
+- **Modern Tkinter GUI**
+- **Drag-and-drop** image support (with tkinterdnd2)
+- **Image preview** with auto-enhance and watermark overlay
+- **SSTV encoding**: Robot36, Scottie 1, Martin M1, Martin M2
+- **Export**: WAV, MP3, OGG (MP3/OGG require ffmpeg)
+- **Custom sample rates**
+- **Statistics panel**: image size, audio duration, last encode time
+- **Playback**: Play audio in a fully separate window/process (no crashes, no UI freeze)
+  - Progress bar and time label in playback window
+- **No external dependencies for playback** (uses simpleaudio)
+- **Batch encoding, decode, and other advanced features planned**
+
+---
+
+## Quick Start (v3)
+
+1. **Install requirements:**
+   ```bash
    pip install -r requirements.txt
    ```
+   - For drag-and-drop: `pip install tkinterdnd2`
+   - For MP3/OGG export: [Install ffmpeg](https://ffmpeg.org/download.html) and ensure it's in your PATH
 
-## Usage
-
-1. Run the app:
-   ```sh
-   python sstv-v1.py
+2. **Run the encoder:**
+   ```bash
+   python sstv-v3.py
    ```
-2. Select your desired SSTV mode and sample rate.
-3. Click "Encode Image to SSTV" and choose an image file.
-4. Save the generated WAV file and play it back or transmit it.
-5. Use any SSTV decoder (e.g., MMSSTV, QSSTV) to decode the audio.
 
-## Viewing SSTV Images on Android/iOS
+3. **Usage:**
+   - Drag and drop or select an image
+   - Optionally enable auto-enhance and watermark
+   - Choose SSTV mode and sample rate
+   - Click "Encode to SSTV" and save the audio file
+   - Click "Play Audio" to open a separate playback window (with progress bar)
 
-**Android:**
-- Download [Robot36 - SSTV Image Decoder](https://play.google.com/store/apps/details?id=xdsopl.robot36&hl=en) from the Play Store.
-- Open the app, tap the menu, and select your WAV file to decode.
+---
 
-**iOS:**
-- Download [SSTV Slow Scan TV](https://apps.apple.com/us/app/sstv-slow-scan-tv/id387910013) from the App Store.
-- Use the app’s import/open feature to select your WAV file and decode the image.
+## File Structure
 
-## Dependencies
-- Python 3.8+
-- Pillow
-- numpy
-- scipy
-- pysstv
-- simpleaudio
+- `sstv-v3.py` — Main GUI encoder (recommended)
+- `playback_window.py` — Standalone playback window (launched by v3)
+- `sstv-v2.py` — Previous version with integrated playback (legacy)
+- `sstv-v1.py` — Minimal/legacy version (see below)
+- `requirements.txt` — Python dependencies
+- `LICENSE` — License info
+- `README.md` — This file
 
-Install all dependencies with:
-```sh
-pip install -r requirements.txt
+---
+
+## Why Use v3?
+
+- **No more UI freezes or crashes during playback**
+- **Modern, user-friendly interface**
+- **Separate playback process**: main app is always responsive
+- **Watermark, drag-and-drop, and more**
+- **Actively maintained and extensible**
+
+---
+
+## Old README (v1, legacy)
+
+*The following is the original README for v1. For most users, v3 is recommended.*
+
+---
+
+```
+SSTV Encoder Pro
+----------------
+A modern GUI tool to encode images into SSTV (Robot36, Scottie 1, Martin M1, Martin M2) audio with real-time playback and image enhancement.
+
+Features:
+- Tkinter GUI
+- Image enhancement (contrast, color, sharpening)
+- SSTV encoding (Robot36, Scottie 1, Martin M1, Martin M2)
+- WAV export
+- Real-time playback (simpleaudio)
+
+Usage:
+1. Install requirements: `pip install -r requirements.txt`
+2. Run: `python sstv-v1.py`
+3. Select image, encode, and play audio
+
+Requirements:
+- Python 3.7+
+- Pillow, numpy, scipy, pysstv, simpleaudio
+
+License: MIT
 ```
 
-## Supported Modes
-- Robot36 (320x240)
-- Scottie 1 (320x256)
-- Martin M1 (320x256)
-- Martin M2 (320x256)
-
-## Troubleshooting
-- If your decoded image is noisy or unclear, try different sample rates or disable/enable image enhancement.
-- For best results, use high-contrast, sharp images.
-- If you get errors about missing modules, ensure all dependencies are installed.
+---
 
 ## License
-See [LICENSE](LICENSE) for details. 
+
+See [LICENSE](LICENSE). 
