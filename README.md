@@ -1,4 +1,4 @@
-# SSTV Encoder Pro v3
+# SSTV-Image2Audio
 
 A modern, robust GUI tool to encode images into SSTV (Robot36, Scottie 1, Martin M1, Martin M2) audio with real-time playback, image enhancement, drag-and-drop, watermarking, and more. **v3 is the recommended version.**
 
@@ -72,7 +72,7 @@ A modern, robust GUI tool to encode images into SSTV (Robot36, Scottie 1, Martin
 ---
 
 ```
-SSTV Encoder Pro
+SSTV-Image2Audio
 ----------------
 A modern GUI tool to encode images into SSTV (Robot36, Scottie 1, Martin M1, Martin M2) audio with real-time playback and image enhancement.
 
