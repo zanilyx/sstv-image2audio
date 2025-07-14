@@ -14,7 +14,7 @@ A modern, user-friendly GUI tool to encode images into SSTV (Slow Scan Televisio
 
 1. **Clone the repository:**
    ```sh
-   git clone https://github.com/yourusername/sstv-encoder-pro.git
+   git clone https://github.com/zanilyx/sstv-encoder-pro.git
    cd sstv-encoder-pro
    ```
 2. **Install dependencies:**
